@@ -119,6 +119,7 @@ void setup()
 
   Serial.print("compiled: ");
   Serial.print(__DATE__);
+  Serial.print(" - ");
   Serial.println(__TIME__);
 
   Rtc.Begin();
@@ -191,12 +192,12 @@ void loop()
   screen_altitute(altitude);
   screen_pressure(pressure);
 
-  if (temperature >= 20)
+  if (temperature >= 24)
   {
     digitalWrite(LED_HOT, HIGH);
     digitalWrite(LED_COOL, LOW);
   }
-  if (temperature < 20)
+  if (temperature < 24)
   {
     digitalWrite(LED_HOT, LOW);
     digitalWrite(LED_COOL, HIGH);
